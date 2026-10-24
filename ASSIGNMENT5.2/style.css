@@ -1,0 +1,150 @@
+/* 1. Universal selector */
+* {
+    box-sizing: border-box;
+}
+
+/* General page styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #263238;
+    line-height: 1.6;
+}
+
+/* 2. Element selector */
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 16px;
+}
+
+/* 3. Grouping selector */
+h2, h3 {
+    color: #174ea6;
+}
+
+/* Header and footer */
+header, footer {
+    background-color: #174ea6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Main content */
+main {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 0 18px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* 4. Class selector */
+.card {
+    background-color: #eef4ff;
+    border: 1px solid #c9dcff;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 12px 0;
+}
+
+.highlight {
+    background-color: #fff1c2;
+    padding: 10px;
+    border-left: 4px solid #e0a000;
+}
+
+/* 5. ID selector */
+#special-section {
+    background-color: #dce8fa;
+    border-left: 6px solid #174ea6;
+}
+
+/* 6. Cascade and specificity demonstration */
+
+/* Rule 1: element selector */
+p {
+    color: #333333;
+}
+
+/* Rule 2: class selector; more specific than p */
+.conflict {
+    color: #d62828;
+    font-weight: bold;
+}
+
+/* A later element rule cannot override .conflict */
+p {
+    color: #167044;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    main {
+        margin: 12px auto;
+        padding: 0 10px;
+    }
+}
+
+/*
+
+Universal selector
+
+Selects all HTML elements. Here, `box-sizing: border-box` makes element sizing easier to manage.
+
+Element
+
+`p`
+
+Element selector
+
+Selects every paragraph and applies the specified text styling.
+
+Class
+
+`.card`
+
+Class selector
+
+Selects all elements with `class="card"`. The same class can be reused on multiple elements.
+
+ID
+
+`#special-section`
+
+ID selector
+
+Selects the element with the matching ID. An ID should be unique on the page.
+
+Grouping
+
+`h2, h3`
+
+Grouping selector
+
+Applies the same CSS declarations to both `h2` and `h3` headings.
+
+## 5. Cascade and specificity experiment
+
+The CSS contains two conflicting rules:
+
+```
+p {
+    color: #167044;
+}
+
+.conflict {
+    color: #d62828;}
